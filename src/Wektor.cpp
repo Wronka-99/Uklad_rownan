@@ -17,7 +17,7 @@
 using namespace std;
 
 
-bool Wektor::operator == ( const Wektor  &Wektor2)const
+bool Wektor::operator == ( const Wektor  &Wektor2)const//przeciazenie operatora == w celu porownywania wektorow
 {
 
     bool prawda=1;
@@ -35,7 +35,7 @@ bool Wektor::operator == ( const Wektor  &Wektor2)const
 
 
 
-bool Wektor::operator != ( const Wektor  &Wektor2)const
+bool Wektor::operator != ( const Wektor  &Wektor2)const//przeciazenie operatora != w celu porownywania wektorow
 {
 
     bool prawda=0;
@@ -53,7 +53,7 @@ bool Wektor::operator != ( const Wektor  &Wektor2)const
 
 
 
-ostream &operator<<(ostream &Strm, const Wektor &Wek)
+ostream &operator<<(ostream &Strm, const Wektor &Wek)//przeciazenie operatora << w celu wyswietlania wektora
 {
     for (int i = 0; i < ROZMIAR; i++)
     {
@@ -63,7 +63,7 @@ ostream &operator<<(ostream &Strm, const Wektor &Wek)
     return Strm;
 }
 
-istream &operator>>(istream &Strm, Wektor &Wek)
+istream &operator>>(istream &Strm, Wektor &Wek)//przeciazenie operatora >> w celu wczytywania wektora
 {
     double elem;
     for (int i = 0; i < ROZMIAR; i++)
@@ -74,7 +74,7 @@ istream &operator>>(istream &Strm, Wektor &Wek)
     return Strm;
 }
 
-const Wektor Wektor::operator+(const Wektor Wektor2)const
+const Wektor Wektor::operator+(const Wektor Wektor2)const//funkcja dodajaca wektor do wektora
 {   
     Wektor wektor3;
     for (int indeks = 0; indeks < ROZMIAR; indeks++)
@@ -84,7 +84,7 @@ const Wektor Wektor::operator+(const Wektor Wektor2)const
     return wektor3;
 }
 
-const Wektor Wektor::operator-(const Wektor Wektor2)const
+const Wektor Wektor::operator-(const Wektor Wektor2)const//funkcja odejmujaca wektor od wektor
 {
    Wektor wektor3;
     for (int indeks = 0; indeks < ROZMIAR; indeks++)
@@ -94,7 +94,7 @@ const Wektor Wektor::operator-(const Wektor Wektor2)const
     return wektor3;
 }
 
-double Wektor::operator*(Wektor Wektor2)const
+double Wektor::operator*(Wektor Wektor2)const//funkcja mnozaca wektor przez wektor
 {
     double Wynik, IloczynS;
     for (int i = 0; i < ROZMIAR; i++)
@@ -105,7 +105,7 @@ double Wektor::operator*(Wektor Wektor2)const
     return Wynik;
 }
 
-const Wektor Wektor::operator*(double liczba)const
+const Wektor Wektor::operator*(double liczba)const//funkcja mnozaca wektor przez liczbe
 {
     Wektor Wektor2;
     for (int i = 0; i < ROZMIAR; i++)
@@ -115,7 +115,7 @@ const Wektor Wektor::operator*(double liczba)const
     return Wektor2;
 }
 
-Wektor operator *(double liczba, Wektor Wektor2)
+Wektor operator *(double liczba, Wektor Wektor2)//funkcja mnozaca liczbe przez wektor
 {
     
     for (int i = 0; i < ROZMIAR; i++)
@@ -126,7 +126,7 @@ Wektor operator *(double liczba, Wektor Wektor2)
 
 }
 
-const Wektor Wektor::operator/(double liczba)const
+const Wektor Wektor::operator/(double liczba)const//funkcja dzielaca wektor przez liczbe
 {
     Wektor Wektor2;
 
@@ -137,7 +137,7 @@ const Wektor Wektor::operator/(double liczba)const
     return Wektor2;
 }
 
-double Wektor::dlugoscWektora()const
+double Wektor::dlugoscWektora()const//funkcja liczaca dlugosc wektora
 {
     double Wynik = 0;
     for (int i = 0; i < ROZMIAR; i++)
@@ -148,7 +148,7 @@ double Wektor::dlugoscWektora()const
 }
 
 
-double & Wektor::operator[] (int indeks)
+double & Wektor::operator[] (int indeks)//funkcja przypisujaca  element wektorowi
   {
     if(indeks<0||indeks>ROZMIAR)
     {
@@ -160,7 +160,7 @@ double & Wektor::operator[] (int indeks)
   }
 
 
- const double & Wektor::operator[](int indeks) const
+ const double & Wektor::operator[](int indeks) const//funkcja zwracajaca element wektora
  {
     if(indeks<0||indeks>ROZMIAR)
     {

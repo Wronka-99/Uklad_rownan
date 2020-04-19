@@ -12,35 +12,34 @@
 class MacierzKw
 {
   private:
+        
         Wektor tablica[ROZMIAR];
 
   public:
         
+        MacierzKw(); // konstruktor macierzy
 
-        const MacierzKw & transponuj() const;
+        void transponuj(); //funkcja do transponowania macierzy
       
+        double Wyznacznik();// metoda eliminacji gaussa
 
-        const MacierzKw & odwroc() const;
-        
-        
-        const MacierzKw & operator* (const MacierzKw & Macierz2);
-        const MacierzKw & operator+ (const MacierzKw & Macierz2);
-        const MacierzKw & operator- (const MacierzKw & Macierz2);
-        const MacierzKw & operator* (double liczba);
+        MacierzKw  operator* ( MacierzKw  Macierz2); //funkcja do mnozenia macierzy przez macierz
+        MacierzKw  operator+ ( MacierzKw  Macierz2); //funkcja do dodawania macierzy
+        MacierzKw  operator- ( MacierzKw  Macierz2); //funkcja do odejmowania macierzy
+        MacierzKw  operator* (double liczba);              //funkcja do mnozenia macierzy przez liczbe
+        Wektor operator* (Wektor  wektor);       //funkcja do mnozenia macierzy przez wektor
 
+        const Wektor & operator [] (int indeks) const; //funkcja do wyciagania wektora
+        Wektor & operator [] (int indeks);   //funkcja do zmieniania wektora macierzy
 
-        const Wektor & operator [] (int indeks) const;
-        Wektor & operator [] (int indeks);
-
-        const Wektor & zwroc_kolumne(int indeks);
-        void zmien_kolumne(int indeks, Wektor Wektor2);
+       
 };
 
-std::istream &operator>>(std::istream &Strm, MacierzKw &Mac);
-std::ostream &operator<<(std::ostream &Strm, const MacierzKw &Mac);
+std::istream &operator>>(std::istream &Strm, MacierzKw &Mac); //przeciazenie operatora do wczytywania macierzy
+std::ostream &operator<<(std::ostream &Strm, const MacierzKw &Mac); //przeciazenie operatora do wyswietlania macierzy
 
 
-const MacierzKw & operator*(double liczba, const MacierzKw macierz2);
+ MacierzKw  operator*(double liczba,  MacierzKw macierz2);// funkcja ta pozwala na mnozenie liczby przez macierz
 
 
 #endif
