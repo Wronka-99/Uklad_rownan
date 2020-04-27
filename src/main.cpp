@@ -23,7 +23,7 @@ int main()
  Wektor wynik;
 
 
- cout << endl << " Wprowadz wierszowo uklad rownan, na koncu wpisujesz wektor wyrazow wolnych."<< endl << endl;
+ cout << endl << " Wprowadz kolumnowo uklad rownan, na koncu wpisujesz wektor wyrazow wolnych."<< endl << endl;
 
  cin>>UklRown;//wprowadzanie ukladu rownan z klawiatury
  cout<<UklRown;//wyswietlanie ukladu rownan
